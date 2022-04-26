@@ -1,16 +1,51 @@
-// 변수. 변수는 항상 앞에 달러($)를 붙인다
-$red: #fa5252;
-
-// 믹스인 : 재사용되는 스타일을 함수처럼 이용하는 것
-@mixin square($size) {
-  $calculated: 32px * $size;
-  width: $calculated;
-  height: $calculated;
-}
+// css에서 임포트할 때는 골뱅이 넣어주기. 확장자명은 안 넣어줘도 된다.
+@import "./styles/utils";
 
 // 클래스 중첩
 .SassComponent {
   display: flex;
+  // open-color 라이브러리에서 설정해둔 변수
+  background: $oc-gray-2;
+  // includd-media 라이브러리를 이용한 미디어쿼리
+  @include media("<768px") {
+    background-color: $oc-gray-9;
+  }
   .box {
+    background: red;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    // &은 부모 클래스를 의미 여기서는 .box를 의미
+    &.red {
+      background: $red;
+      // 믹스인 쓰는 법 : @include 만들어둔 스타일명
+      @include square(1);
+    }
+    &.orange {
+      background: $orange;
+      @include square(2);
+    }
+    &.yellow {
+      background: $yellow;
+      @include square(3);
+    }
+    &.green {
+      background: $green;
+      @include square(4);
+    }
+    &.blue {
+      background: $blue;
+      @include square(5);
+    }
+    &.indigo {
+      background: $indigo;
+      @include square(6);
+    }
+    &.violet {
+      background: $violet;
+      @include square(7);
+    }
+    &:hover {
+      background: black;
+    }
   }
 }

@@ -18,4 +18,3 @@ function SassComponent(props) {
 }
 
 export default SassComponent;
-<div></div>;

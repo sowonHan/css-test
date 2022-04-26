@@ -1,0 +1,19 @@
+// 라이브러리 임포트할 때는 물결기호 쓰는 듯
+@import "~include-media/dist/include-media";
+@import "~open-color/open-color";
+
+// 변수. 변수는 항상 앞에 달러($)를 붙인다
+$red: #fa5252;
+$orange: #fd7e14;
+$yellow: #fcc419;
+$green: #40c057;
+$blue: #339af0;
+$indigo: #5c7cfa;
+$violet: #7950f2;
+
+// 믹스인 : 재사용되는 스타일을 함수처럼 이용하는 것
+@mixin square($size) {
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
+}
